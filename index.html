@@ -10,235 +10,248 @@
     <link rel="stylesheet" href="https://e6t7a8v2.stackpathcdn.com/tutorial/css/fontawesome-all.min.css">
 
     <style>
-        :root{
-            --color1: #FD8F33;
-            --color2: #0DC8AB;
-            --color3: #05B0DE;
-            --color4: #8E7CCC;
-        }
-        .main-timeline{
-            font-family: 'Source Sans Pro', sans-serif;
-            position: relative;
-        }
-        .main-timeline:after{
-            content: '';
-            display: block;
-            clear: both;
-        }
-        .main-timeline .timeline{
-            width: 50.1%;
-            padding: 20px 0 20px 100px;
-            float: right;
-            position: relative;
-            z-index: 1;
-        }
-        .main-timeline .timeline:before,
-        .main-timeline .timeline:after{
-            content: '';
-            background: var(--color1);
-            height: 100%;
-            width: 28px;
-            position: absolute;
-            left: -11px;
-            top: 0;
-        }
-        .main-timeline .timeline:after{
-            background: var(--color1);
-            height: 18px;
-            width: 200px;
-            box-shadow: 0 0 10px -5px #000;
-            transform:  translateY(-50%);
-            top: 50%;
-            left: -90px;
+        body {
+            background-color: #f9f9fa
         }
 
+        @media (min-width:992px) {
+            .page-container {
+                max-width: 1140px;
+                margin: 0 auto
+            }
 
-        /*
-        *Test colors
-        */
-
-        .main-timeline .timeline-color1:before,
-        .main-timeline .timeline-color1:after{
-            content: '';
-            background: #8E7CCC;
-            height: 100%;
-            width: 28px;
-            position: absolute;
-            left: -11px;
-            top: 0;
-        }
-        .main-timeline .timeline-color1:after{
-            background: #8E7CCC;
-            height: 18px;
-            width: 200px;
-            box-shadow: 0 0 10px -5px #000;
-            transform:  translateY(-50%);
-            top: 50%;
-            left: -90px;
+            .page-sidenav {
+                display: block !important
+            }
         }
 
+        .padding {
+            padding: 2rem
+        }
 
-        .main-timeline .timeline-content{
-            color: #517d82;
-            background-color: var(--color1);
-            padding: 0 0 0 80px;
-            box-shadow: 0 0 20px -10px #000;
-            border-radius: 10px;
-            display: block;
+        .w-32 {
+            width: 32px !important;
+            height: 32px !important;
+            font-size: .85em
         }
-        .main-timeline .timeline-content:hover{
-            color: #517d82;
-            text-decoration: none;
+
+        .tl-item .avatar {
+            z-index: 2
         }
-        .main-timeline .timeline-icon{
+
+        .circle {
+            border-radius: 500px
+        }
+
+        .gd-warning {
             color: #fff;
-            background-color: var(--color1);
-            font-size: 35px;
-            text-align: center;
-            line-height: 62px;
-            height: 60px;
-            width: 60px;
-            border-radius: 50%;
-            transform: translateY(-50%);
+            border: none;
+            background: #f4c414 linear-gradient(45deg, #f4c414, #f45414)
+        }
+
+        .timeline {
+            position: relative;
+            border-color: rgba(160, 175, 185, .15);
+            padding: 0;
+            margin: 0
+        }
+
+        .p-4 {
+            padding: 1.5rem !important
+        }
+
+        .block,
+        .card {
+            background: #fff;
+            border-width: 0;
+            border-radius: .25rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+            margin-bottom: 1.5rem
+        }
+
+        .mb-4,
+        .my-4 {
+            margin-bottom: 1.5rem !important
+        }
+
+        .tl-item {
+            border-radius: 3px;
+            position: relative;
+            display: -ms-flexbox;
+            display: flex
+        }
+
+        .tl-item>* {
+            padding: 10px
+        }
+
+        .tl-item .avatar {
+            z-index: 2
+        }
+
+        .tl-item:last-child .tl-dot:after {
+            display: none
+        }
+
+        .tl-item.active .tl-dot:before {
+            border-color: #448bff;
+            box-shadow: 0 0 0 4px rgba(68, 139, 255, .2)
+        }
+
+        .tl-item:last-child .tl-dot:after {
+            display: none
+        }
+
+        .tl-item.active .tl-dot:before {
+            border-color: #448bff;
+            box-shadow: 0 0 0 4px rgba(68, 139, 255, .2)
+        }
+
+        .tl-dot {
+            position: relative;
+            border-color: rgba(160, 175, 185, .15);
+            padding-top: 100px
+        }
+
+        .tl-dot:after,
+        .tl-dot:before {
+            content: '';
             position: absolute;
-            left: -100px;
-            top: 50%;
-            z-index: 1;
-        }
-        .main-timeline .timeline-year{
-            color: #517d82;
-            background-color: #fff;
-            font-size: 35px;
-            font-weight: 600;
-            text-align: center;
-            line-height: 93px;
-            height: 113px;
-            width: 113px;
-            border: 6px solid var(--color1);
-            box-shadow: 0 0 10px -5px #000;
+            border-color: inherit;
+            border-width: 3px;
+            border-style: solid;
             border-radius: 50%;
-            transform: translateY(-50%);
+            background-color: inherit;
+            width: 30px;
+            height: 30px;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+
+        .tl-dot:after {
+            width: 0;
+            height: auto;
+            top: 25px;
+            bottom: -15px;
+            border-right-width: 0;
+            border-top-width: 0;
+            border-bottom-width: 0;
+            border-radius: 0
+        }
+
+        tl-item.active .tl-dot:before {
+            border-color: #448bff;
+            box-shadow: 0 0 0 4px rgba(68, 139, 255, .2)
+        }
+
+        .tl-dot {
+            position: relative;
+            border-color: rgba(160, 175, 185, .15)
+        }
+
+        .tl-dot:after,
+        .tl-dot:before {
+            content: '';
             position: absolute;
-            left: 50px;
-            top: 50%;
-            z-index: 1;
+            border-color: inherit;
+            border-width: 3px;
+            border-style: solid;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%)
         }
-        .main-timeline .inner-content{
-            background-color: #fff;
-            padding: 10px;
+
+        .tl-dot:after {
+            width: 0;
+            height: auto;
+            top: 42px;
+            bottom: -15px;
+            border-right-width: 0;
+            border-top-width: 0;
+            border-bottom-width: 0;
+            border-radius: 0
         }
-        .main-timeline .title{
-            color: var(--color1);
-            font-size: 22px;
-            font-weight: 600;
-            margin: 0 0 5px 0;
+
+        .tl-content p:last-child {
+            margin-bottom: 0
         }
-        .main-timeline .description{
-            font-size: 14px;
-            letter-spacing: 1px;
-            margin: 0;
+
+        .tl-date {
+            font-size: .85em;
+            margin-top: 2px;
+            min-width: 100px;
+            max-width: 100px
         }
-        .main-timeline .timeline:nth-child(even){
-            padding: 20px 100px 20px 0;
-            float: left;
+
+        .avatar {
+            position: relative;
+            line-height: 1;
+            border-radius: 500px;
+            white-space: nowrap;
+            font-weight: 700;
+            border-radius: 100%;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-negative: 0;
+            flex-shrink: 0;
+            border-radius: 500px;
+            box-shadow: 0 5px 10px 0 rgba(50, 50, 50, .15)
         }
-        .main-timeline .timeline:nth-child(even):before{
-            left: auto;
-            right: -14.5px;
+
+        .b-warning {
+            border-color: #f4c414 !important
         }
-        .main-timeline .timeline:nth-child(even):after{
-            left: auto;
-            right: -90px;
+
+        .b-primary {
+            border-color: #448bff !important
         }
-        .main-timeline .timeline:nth-child(even) .timeline-content{ padding: 0 80px 0 0; }
-        .main-timeline .timeline:nth-child(even) .timeline-icon{
-            left: auto;
-            right: -100px;
-        }
-        .main-timeline .timeline:nth-child(even) .timeline-year{
-            left: auto;
-            right: 50px;
-        }
-        .main-timeline .timeline:nth-child(4n+2):before,
-        .main-timeline .timeline:nth-child(4n+2):after{
-            background: var(--color2);
-        }
-        .main-timeline .timeline:nth-child(4n+2) .timeline-content,
-        .main-timeline .timeline:nth-child(4n+2) .timeline-icon{
-            background-color: var(--color2);
-        }
-        .main-timeline .timeline:nth-child(4n+2) .timeline-year{ border-color: var(--color2); }
-        .main-timeline .timeline:nth-child(4n+2) .title{ color: var(--color2); }
-        .main-timeline .timeline:nth-child(4n+3):before,
-        .main-timeline .timeline:nth-child(4n+3):after{
-            background: var(--color3);
-        }
-        .main-timeline .timeline:nth-child(4n+3) .timeline-content,
-        .main-timeline .timeline:nth-child(4n+3) .timeline-icon{
-            background-color: var(--color3);
-        }
-        .main-timeline .timeline:nth-child(4n+3) .timeline-year{ border-color: var(--color3); }
-        .main-timeline .timeline:nth-child(4n+3) .title{ color: var(--color3); }
-        .main-timeline .timeline:nth-child(4n+4):before,
-        .main-timeline .timeline:nth-child(4n+4):after{
-            background: var(--color4);
-        }
-        .main-timeline .timeline:nth-child(4n+4) .timeline-content,
-        .main-timeline .timeline:nth-child(4n+4) .timeline-icon{
-            background-color: var(--color4);
-        }
-        .main-timeline .timeline:nth-child(4n+4) .timeline-year{ border-color: var(--color4); }
-        .main-timeline .timeline:nth-child(4n+4) .title{ color: var(--color4); }
-        @media only screen and (max-width:1200px){
-            .main-timeline .timeline:before{ left: -12.5px; }
-            .main-timeline .timeline:nth-child(even):before{ right: -14px; }
-        }
-        @media only screen and (max-width:990px){
-            .main-timeline .timeline:before{ left: -12.5px; }
-        }
-        @media only screen and (max-width:767px){
-            .main-timeline .timeline,
-            .main-timeline .timeline:nth-child(even){
-                width: 100%;
-                padding: 20px 0 20px 37px;
-            }
-            .main-timeline .timeline:before{ left: 0; }
-            .main-timeline .timeline:nth-child(even):before{
-                right: auto;
-                left: 0;
-            }
-            .main-timeline .timeline:after,
-            .main-timeline .timeline:nth-child(even) .timeline:after{
-                display: none;
-            }
-            .main-timeline .timeline-icon,
-            .main-timeline .timeline:nth-child(even) .timeline-icon{
-                left: 0;
-                display: none;
-            }
-            .main-timeline .timeline-year,
-            .main-timeline .timeline:nth-child(even) .timeline-year{
-                height: 75px;
-                width: 75px;
-                line-height: 60px;
-                font-size: 25px;
-                left: 1px;
-            }
-            .main-timeline .timeline-content,
-            .main-timeline .timeline:nth-child(even) .timeline-content{
-                padding: 0 0 0 40px;
-            }
+
+        .b-danger {
+            border-color: #f54394 !important
         }
     </style>
 
 </head>
 <body>
     
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="main-timeline">
+    
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row">
+                <div class="col-lg-3">
+                    <p>Línea de tiempo 1</p>
+                    <div id="timeline1" class="timeline p-4 block mb-4">
+                        
+                    </div>
+                </div>
 
+                <div class="col-lg-3">
+                    <p>Línea de tiempo 2</p>
+                    <div id="timeline2" class="timeline p-4 block mb-4">
+                        
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <p>Línea de tiempo 3</p>
+                    <div id="timeline3" class="timeline p-4 block mb-4">
+                        
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <p>Línea de tiempo 4</p>
+                    <div id="timeline4" class="timeline p-4 block mb-4">
+                        
+                    </div>
                 </div>
             </div>
         </div>
@@ -250,103 +263,99 @@
 
     <script>
 
-        const timeline_data = [
+        const timlineData1 = [
             {   
                 title: "Event one",
                 date: "2019",
-                text: "It will be as simple as occidental in fact it will be Occidental Cambridge friend",
-                icon: "fa-globe"
+                color: "b-warning"
+            },
+            {   
+                title: "Event one",
+                date: "2019",
+                color: "b-warning"
             },
             {   
                 title: "Event two",
                 date: "2020",
-                text: "It will be as simple as occidental in fact it will be Occidental Cambridge friend",
-                icon: "fa-rocket"
+                color: "b-primary"
             },
             {   
-                title: "Event two",
+                title: "Event three",
                 date: "2020",
-                text: "It will be as simple as occidental in fact it will be Occidental Cambridge friend",
-                icon: "fa-rocket"
+                color: "b-primary"
             },
             {   
-                title: "Event two",
+                title: "Event three",
                 date: "2020",
-                text: "It will be as simple as occidental in fact it will be Occidental Cambridge friend",
-                icon: "fa-rocket"
+                color: "b-primary"
             },
             {   
-                title: "Event two",
+                title: "Event three",
                 date: "2020",
-                text: "It will be as simple as occidental in fact it will be Occidental Cambridge friend",
-                icon: "fa-rocket"
+                color: "b-primary"
+            },
+            {   
+                title: "Event three",
+                date: "2020",
+                color: "b-primary"
+            },
+            {   
+                title: "Event three",
+                date: "2020",
+                color: "b-primary"
+            },
+            {   
+                title: "Event three",
+                date: "2020",
+                color: "b-primary"
             },
         ];
 
         
-        function getEvent(title, text, date, icon){
-            /**
-             * Return a LI element with its related classes
-             * */
+        function printTimeline(baseID, data){
 
-            let div = document.createElement("div");
-            let a = document.createElement("a");
-            let aDivOne = document.createElement("div");
-            let aDivOneI = document.createElement("i");
-            let aDivTwo = document.createElement("div");
-            let aDivThree = document.createElement("div");
-            let aDivThreeH3 = document.createElement("h3");
-            let aDivThreeP = document.createElement("p");
-            
-            let divAfter = document.createElement("div");
-            let divBefore = document.createElement("div");
+            let timeline = document.querySelector("#" + baseID);
 
+            for (const iterator of data) {
+                const event = getEvent(iterator.title, iterator.date, iterator.color);
+                timeline.appendChild(event);
+            }
 
-            divAfter.classList.add("timeline-after");
-            divBefore.classList.add("timeline-before");
-            
-            // Assign classes
-            div.classList.add("timeline");
-            a.classList.add("timeline-content");
-
-            
-            //aDivThreeH3.style.color = "red";
-            //aDivTwo.style.border = "6px solid red";
-
-            aDivOne.classList.add("timeline-icon");
-            aDivOneI.classList.add("fa");
-            aDivOneI.classList.add(icon);
-            aDivTwo.classList.add("timeline-year");
-            aDivThree.classList.add("inner-content");
-            aDivThreeH3.classList.add("title");
-            aDivThreeP.classList.add("description");
-            
-            // Assign texts
-            aDivTwo.textContent = date;
-            aDivThreeH3.textContent = title;
-            aDivThreeP.textContent = text;
-
-            // Assign elements to div
-            aDivOne.appendChild(aDivOneI);
-            aDivThree.appendChild(aDivThreeH3);
-            aDivThree.appendChild(aDivThreeP);
-            a.appendChild(aDivOne);
-            a.appendChild(aDivTwo);
-            a.appendChild(aDivThree);
-
-            div.appendChild(divAfter);
-            div.appendChild(a);
-            div.appendChild(divBefore);
-
-            return div;
         }
 
-        let timeline = document.querySelector(".main-timeline");
+        function getEvent(title, date, color){
+            
+            let divItem = document.createElement("div");
+            let divDot = document.createElement("div");
+            let divContent = document.createElement("div");
+            let divTitle = document.createElement("div");
+            let divYear = document.createElement("div");
 
-        for (const iterator of timeline_data) {
-            const event = getEvent(iterator.title, iterator.text, iterator.date, iterator.icon);
-            timeline.appendChild(event);
+            divItem.className = "tl-item";
+
+            divDot.classList.add("tl-dot");
+            divDot.classList.add(color);
+            
+            divContent.className = "tl-content";
+            divYear.className = "tl-date text-muted mt-1";
+
+            divTitle.textContent = title;
+            divYear.textContent = date;
+
+            divContent.appendChild(divTitle);
+            divContent.appendChild(divYear);
+
+            divItem.appendChild(divDot);
+            divItem.appendChild(divContent);
+
+            return divItem;
         }
+
+
+        printTimeline("timeline1", timlineData1);
+        printTimeline("timeline2", timlineData1);
+        printTimeline("timeline3", timlineData1);
+        printTimeline("timeline4", timlineData1);
 
     </script>
 
